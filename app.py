@@ -32,7 +32,7 @@ def processRequest(req):
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
     fetch_parameters = req.get("result")
-    parameters = result.get("parameters")
+    parameters = fetch_parameters.get("parameters")
     global city = parameters.get("city")
     global location = parameters.get("Location")
     baseurl = "https://fazendanatureza.com/bot/botarz.php"
