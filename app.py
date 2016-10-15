@@ -33,8 +33,8 @@ def processRequest(req):
         return {}
     fetch_parameters = req.get("result")
     parameters = result.get("parameters")
-    city = parameters.get("city")
-    location = parameters.get("Location")
+    global city = parameters.get("city")
+    global location = parameters.get("Location")
     baseurl = "https://fazendanatureza.com/bot/botarz.php"
     result = urllib.urlopen(baseurl).read()                    
     data = json.loads(result)
