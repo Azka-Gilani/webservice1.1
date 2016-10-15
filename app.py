@@ -33,8 +33,8 @@ def processRequest(req):
         return {}
     fetch_parameters = req.get("result")
     parameters = fetch_parameters.get("parameters")
-    global city = parameters.get("city")
-    global location = parameters.get("Location")
+    location = parameters.get("Location")
+    city = parameters.get("city")
     baseurl = "https://fazendanatureza.com/bot/botarz.php"
     result = urllib.urlopen(baseurl).read()                    
     data = json.loads(result)
@@ -56,7 +56,7 @@ def makeWebhookResult(data):
 
     # print(json.dumps(item, indent=4))
 
-    speech = "This is the response from server... " + city + " " + location 
+    speech = "This is the response from server... " row_title ;
     print("Response:")
     print(speech)
     message= {
